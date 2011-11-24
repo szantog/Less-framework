@@ -1,0 +1,214 @@
+
+/**
+ * @file
+ * HTML Element Styling
+ *
+ * This based on linked articles. By default settings.less this is a standard html-reset.until you start customize it
+ *
+ * @see http://meiert.com/en/blog/20080419/reset-style-sheets-are-bad/
+ * @see http://snook.ca/archives/html_and_css/no_css_reset/
+ */
+
+body {
+  font-size: 100%; /* Fixes exaggerated text resizing in IE6 and IE7 */
+}
+
+/*
+ * The first div within body, where the default font parameters need to set.
+ */
+#page {
+  fs;
+  lh;
+}
+
+pre,
+code {
+  fs(1.1em); /* Monospace fonts can be hard to read */
+  ff("Courier New", "DejaVu Sans Mono", monospace);
+}
+
+body,
+caption,
+th,
+td,
+dl,
+input,
+textarea,
+select,
+option,
+legend,
+fieldset {
+  ff;
+}
+
+/*
+ * Headings
+ * For easier modification, all headings inherit the styles of previous headings
+ */
+h1 {
+  fs(@h1-fs);
+  lh(@h1-lh);
+  bold;
+  color: @h1-clr;
+}
+
+h2 {
+  h1;
+  fs(@h2-fs);
+  lh(@h2-lh);
+  color: @h2-clr;
+}
+
+h3 {
+  h2;
+  fs(@h3-fs);
+  lh(@h3-lh);
+  color: @h3-clr;
+}
+
+h4 {
+  h3;
+  fs(@h4-fs);
+  lh(@h4-lh);
+  color: @h4-clr;
+}
+
+h5 {
+  h4;
+  fs(@h5-fs);
+  lh(@h5-lh);
+  color: @h5-clr;
+}
+
+h6 {
+  h5;
+  fs(@h6-fs);
+  lh(@h6-lh);
+  color: @h6-clr;
+}
+
+/*
+ * Block-level elements
+ */
+p,
+ul,
+ol,
+dl,
+pre,
+table,
+fieldset {
+  mtop;
+  mbottom;
+}
+
+blockquote {
+  margin(@h-margin @h-margin * 2);
+}
+
+/*
+ * Lists
+ */
+ul,
+ol {
+  mleft(0);
+  pleft(2em); /* LTR */
+}
+
+ul ul, ul ol,
+ol ol, ol ul{
+  nomarding;
+}
+
+li {
+  nomarding;
+}
+
+ul          {list-style-type: disc;}
+ul ul       {list-style-type: circle;}
+ul ul ul    {list-style-type: square;}
+ul ul ul ul {list-style-type: circle;}
+ol          {list-style-type: decimal;}
+ol ol       {list-style-type: lower-alpha;}
+ol ol ol    {list-style-type: decimal;}
+
+dt {
+  nomarding;
+}
+
+dd {
+  margin(0 0 0 2em);
+  nopadding;
+}
+
+a {
+  underline;
+  link;
+}
+
+/*
+ * Tables
+ */
+table {
+  border-collapse: collapse;
+  /* width: 100%; */ /* Prevent cramped-looking tables */
+}
+
+th,
+thead th,
+tbody th {
+  alignl; /* LTR */
+  nopadding;
+  border-bottom: none;
+}
+
+tbody {
+  border-top: none;
+}
+
+/*
+ * Abbreviations
+ */
+abbr {
+  border-bottom: 1px dotted #666;
+  cursor: help;
+  white-space: nowrap;
+}
+
+/*
+ * Images
+ */
+img {
+  border: 0;
+  //max-width: 100%;
+}
+
+/*
+ * Horizontal rules
+ */
+hr {
+  height: 1px;
+  border: 1px solid #666;
+}
+
+/*
+ * Forms
+ */
+form {
+  nomarding;
+}
+
+input[type="submit"], button {button}
+
+fieldset {
+  margin(1em 0);
+  padding(0.5em);
+}
+
+small {
+  fs(@small);
+  left;
+}
+
+big {
+  fs(@big);
+}
