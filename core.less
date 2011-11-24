@@ -6,7 +6,6 @@
  */
 
 /* Block aliases */
-
 block {display: block;}
 inline-block {display: inline-block;}
 inline {display: inline;}
@@ -16,7 +15,7 @@ nodisplay {display: none;}
 clr {clear: both; display: block;}
 clrl {clear: left;}
 clrr {clear: right;}
-clrnone {clear: none;}
+noclr {clear: none;}
 
 /*
  * Float the element, and add a default margin to the right side
@@ -42,7 +41,6 @@ static {position: static;}
  *        lh(20px) //It makes 20px line-height.
  *        fslh(20px; 5px) //It makes 20px font size with 20px + 5px = 25px line height;
  */
-
 fs (@var: @font-size;) {font-size: @var;}
 ff (@var: @font-family;) {font-family: @var;}
 lh (@var: @line-height;) {line-height: @var;}
@@ -80,7 +78,6 @@ fsreset {fs; lh; fwnormal; fsnormal; tdnone; alignl; ttnone;}
  *        mtop // It makes a default size margin at the top
  *        nomargin //Set margin to 0.
  */
-
 margin(@var: @margin;) {margin: @var;}
 mtop(@var: @h-margin;) {margin-top: @var;}
 mbottom(@var: @h-margin;) {margin-bottom: @var;}
@@ -98,10 +95,14 @@ nopadding {padding: 0;}
 nomarding {margin: 0; padding: 0;}
 
 /*
+ * Borders
+ */
+noborder {border: none;}
+
+/*
  * A basic grid system
  * Normally never need to use
  */
-
 alpha {margin-left: 0;}
 omega {margin-right: 0;}
 container {margin-left: auto; margin-right: auto; width: @page-width;}
