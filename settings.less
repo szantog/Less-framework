@@ -148,3 +148,13 @@
 @menu-separator-border: 1px solid @black; // border between menu items
 @menu-separator-height: @line-height; // height of border
 @menu-item-distance: 2 * @margin; // distance between two menu items
+
+/* Add a separator style to separate elements eg. a items of articles. */
+/* You should use border and background image too, but sprite section doesn't initialize yet. */
+/* @see row-separator */
+separator {
+  border-bottom: 1px solid @black;
+  //background: url(../images/sprite.png) no-repeat top left;
+}
+/* Set this to add margin and padding around the separator @see row-separator */
+@separator-height: 2 * @h-margin;

@@ -1,7 +1,7 @@
 
 /**
  * @file
- * Mixing and mixing to classes.
+ * Complex mixings
  */
 
 /* Markup free clearing (See: http://www.positioniseverything.net/easyclearing.html ) */
@@ -50,6 +50,7 @@ link(@a: @a-link; @b: @a-visited; @c: @a-hover; @d: @a-focus; @e: @a-active;) {
 link-block(@text-indent: -10000px;) {
 	position: relative;
   block;
+
 	a {
 		display: block;
 		text-indent: @text-indent;
@@ -197,4 +198,26 @@ separated-menu (@brdr: @menu-separator-border; @hght: @menu-separator-height; @d
       noborder;
     }
   }
+}
+
+/*
+ * Separate elements as rows. It works with images and borders as separator too.
+ */
+row-separator(@hgt: @separator-height;) {
+  margin-top: @hgt / 2;
+  mbottom(0); //This prevent to add + unnecessary margins
+  overflow:hidden;
+  padding-bottom: @hgt / 2;
+  clr;
+  //separator;
+  //border-bottom: 1px solid @black;
+	&.first {
+		mtop(0);
+	}
+
+	&.last {
+		nobg;
+		nopadding;
+    noborder;
+	}
 }
