@@ -221,3 +221,102 @@ row-separator(@hgt: @separator-height;) {
     noborder;
 	}
 }
+
+/*
+ * Initialize triangle, this is just a helper function.
+ */
+triangle {
+  border-color: rgba(0,0,0,0);
+  border-style: solid;
+  border-width: @font-size;
+  display: inline-block;
+  content: "";
+  z-index: 1000;
+}
+
+/*
+ * Triangles with directions. These hasn't default values, you need to extend in base.less, if you want to use this.
+ * Eg:
+ *  triangle-right {
+ *    triangle-right(#000; 5px; 5px; 10px);
+ *  }
+ * @clr: The color of triangle
+ * @size: The size of triangle
+ * @top: Offset from top of parent.
+ * @wdth: The width of triangle
+ */
+triangle-right (@clr; @size; @top; @wdth;) {
+  list-style: none;
+  position: relative;
+  margin-left: @wdth;
+  &:before {
+    triangle;
+    border-left-color: @clr;
+    border-width: @size;
+    position: absolute;
+    top: @top;
+    left: -1 * @wdth;
+  }
+}
+
+triangle-left (@clr; @size; @top; @wdth;) {
+  list-style: none;
+  position: relative;
+  margin-left: -1 * @wdth;
+  &:before {
+    triangle;
+    border-right-color: @clr;
+    border-width: @size;
+    position: absolute;
+    top: @top;
+    left: @wdth;
+  }
+}
+
+triangle-top (@clr; @size; @top; @wdth;) {
+  list-style: none;
+  position: relative;
+  margin-left: @wdth;
+
+  &:before {
+    triangle;
+    border-bottom-color: @clr;
+    border-width: @size;
+    position: absolute;
+    top: @top;
+    left: -1 * @wdth;
+  }
+}
+
+triangle-bottom (@clr; @size; @top; @wdth;) {
+  list-style: none;
+  position: relative;
+  margin-left: @wdth;
+
+  &:before {
+    triangle;
+    border-top-color: @clr;
+    border-width: @size;
+    position: absolute;
+    top: @top;
+    left: -1 * @wdth;
+  }
+}
+
+/*
+ * This is an "alternate" triangle, where all size of border are shown.
+ */
+rectangle (@clr; @size; @top; @wdth;)  {
+  position: relative;
+  margin-left: @wdth;
+  list-style: none;
+
+  &:before {
+    triangle;
+    border-color: @clr;
+    border-width: @size;
+    position: absolute;
+    top: @top;
+    left: -1 * @wdth;
+  }
+}
